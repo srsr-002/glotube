@@ -12,5 +12,5 @@ services:
       - ./src:/src
     working_dir: '/src'
     environment:
-      SELENIUM_URL: http://selenium:4444/wd/hub
+      REMOTE_SELENIUM_URL: http://selenium:4444/wd/hub
     tty: true
