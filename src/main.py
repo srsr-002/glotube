@@ -1,8 +1,12 @@
 from selenium import webdriver
+import os
 import scraping
 
 def main():
-    driver = webdriver.Chrome()
+    driver = webdriver.Remote(
+        command_executor = os.environ["SELENIUM_URL"],
+        options = webdriver.ChromeOptions()
+    )
 
     try:
         infoScrap = scraping.load_scraping_info("target.json")
