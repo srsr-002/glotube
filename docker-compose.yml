@@ -1,0 +1,16 @@
+version: "3"
+services:
+  selenium:
+    image: selenium/standalone-chrome:119.0-20231122
+    ports:
+      - 4444:4444
+      - 7900:7900
+    shm_size: '2G'
+  app:
+    build: .
+    volumes:
+      - ./src:/src
+    working_dir: '/src'
+    environment:
+      REMOTE_SELENIUM_URL: http://selenium:4444/wd/hub
+    tty: true
