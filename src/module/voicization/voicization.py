@@ -16,7 +16,7 @@ class Voicization:
         return sentences
 
     # 音声化処理
-    def _make_sound(self, sentences: str):
+    def _make_sound(self, sentences: str) -> None:
         try:
             current_time = datetime.now().strftime("%Y%m%d_%H%M%S")
             dir_relative_path = '../../media/tmp/output_voice'
@@ -30,7 +30,7 @@ class Voicization:
             print(f"An error occurred: {e}")
 
     # TODO:共通クラスに切り出す
-    def make_dir(self, path):
+    def make_dir(self, path) -> None:
         try:
             os.makedirs(path, exist_ok=True)
         except Exception:
