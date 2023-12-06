@@ -11,7 +11,7 @@ class Voicization:
     # 読み上げ対象の文章を取得
     def _load_sentence(self) -> str:
         file_path = '../../media/word.json'
-        with open(file_path, 'r') as file:
+        with open(file_path, 'r', encoding='utf-8') as file:
             sentences = json.load(file)
         return sentences
 
